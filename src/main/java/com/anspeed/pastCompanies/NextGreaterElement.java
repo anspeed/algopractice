@@ -4,7 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by akolukuluru on 7/21/19.
+ Initially I see that we need to pass through digits from right to left
+ I thought I would use String Builder to build a number but it turned out that
+ I am adding unnecessary complexity, then I thought I would use array deque to add things front and rear.
+ But later realized to just use normal list.
+
+ Then I made a mistake that I can add element at Position 0
+ 534976 --> 536479
+ 6
+ 7
+ 9
+
+ break element is 4   List is 6 7 9.
+
+ remaining 53*
+
+ here i thought just push break element at position 1 in the list: 6 (4) 7 9.
+
+ it works fine. 536479
+
+ but how about 2241
+
+ remaining 2, break element 2,  list 1 4
+
+ push 2 at position 1 :  2142 is result, its wrong.
+
+ then I thought just parse thorugh remaining list and just get element bigger than break element.
+
+ break element 2,  list 1 4  find element in the list that is bigger than 2 which is 4 and swap with it.
+
+ so the list 1< 2, so pass then 4> 2 so replace with :-  4 1 2
+ so  |2 4 1 2|
  */
 public class NextGreaterElement {
     public int nextGreaterElement(int n) {
